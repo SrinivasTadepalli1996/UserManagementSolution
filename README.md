@@ -2,6 +2,51 @@
 
 This repository contains a clean and well-structured Web API built with ASP.NET Core, demonstrating good coding practices, design patterns, SOLID principles, and robust unit tests.
 
+## Steps to run the application
+
+- After cloning the repository, run the following command to install all missing dependencies:
+
+-- dotnet restore
+
+- If you encounter package restore issues, manually install them inside each project:
+
+-- cd UserManagementApi
+-- dotnet restore
+
+-- cd ../UserManagementApi.Tests
+-- dotnet restore
+
+- After cloning the repository, check if users.db is present inside:
+
+UserManagementApi/users.db
+
+- Run the following commands to generate the database:
+
+-- cd UserManagementApi
+-- dotnet ef database update
+
+- If you see an error regarding dotnet-ef, install the Entity Framework CLI:
+
+-- dotnet tool install --global dotnet-ef
+
+- Retry
+
+--dotnet ef database update
+
+-- dotnet ef migrations add InitialCreate
+-- dotnet ef database update
+
+
+- Run the follwoing commands to run the api and see the swagger documentation
+
+-- cd UserManagementApi
+-- dotnet run
+-- https://localhost:5230/swagger (Open in browser)
+
+- To run all tests inside UserManagementApi.Tests, execute:
+
+-- cd UserManagementSolution
+-- dotnet test
 
 ## Project Overview
 
