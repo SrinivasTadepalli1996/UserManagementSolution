@@ -27,9 +27,15 @@ public class UsersController(IUserService userService) : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateUser(int id, User user)
     {
-        if (id != user.Id) return BadRequest();
+        if (id != user.Id)
+            return BadRequest("User ID mismatch.");
 
         var updatedUser = await _userService.UpdateUserAsync(user);
+
+        if (updatedUser == null)
+            return NotFound($"User with ID {id} not found.");
+
         return Ok(updatedUser);
     }
+
 }

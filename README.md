@@ -20,23 +20,6 @@ This repository contains a clean and well-structured Web API built with ASP.NET 
 
 UserManagementApi/users.db
 
-- Run the following commands to generate the database:
-
--- cd UserManagementApi
--- dotnet ef database update
-
-- If you see an error regarding dotnet-ef, install the Entity Framework CLI:
-
--- dotnet tool install --global dotnet-ef
-
-- Retry
-
---dotnet ef database update
-
--- dotnet ef migrations add InitialCreate
--- dotnet ef database update
-
-
 - Run the follwoing commands to run the api and see the swagger documentation
 
 -- cd UserManagementApi
